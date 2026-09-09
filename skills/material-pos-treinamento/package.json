@@ -1,0 +1,13 @@
+{
+  "name": "material-pos-treinamento",
+  "version": "1.0.0",
+  "description": "Skill do Claude que transforma a transcrição de um treinamento/aula/mentoria em um PDF de material pós-aula.",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "gerar": "node gerar-pdf.js"
+  },
+  "dependencies": {
+    "puppeteer": "^25.10.0"
+  }
+}
