@@ -2,8 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const puppeteer = require('puppeteer');
 
-// Troque este arquivo pelo seu próprio logo pra personalizar o material.
-const LOGO_PATH = path.join(__dirname, 'logo.svg');
+// ===== LÊ O TEMPLATE PREENCHIDO — edite conteudo.md, nunca este arquivo =====
 
 function toBase64(filePath) {
   const ext = path.extname(filePath).replace('.', '');
@@ -12,33 +11,53 @@ function toBase64(filePath) {
   return `data:${mime};base64,${data}`;
 }
 
-const logo = toBase64(LOGO_PATH);
+function parseConteudo(markdown) {
+  const secoes = {
+    'Resumo Executivo': [],
+    'Principais Tópicos': [],
+    'Pontos de Ação': [],
+    'Perguntas em Aberto': [],
+  };
 
-// ===== CONTEÚDO — editar só isto a cada execução, nunca o HTML/CSS abaixo =====
+  let titulo = '';
+  let data = '';
+  let secaoAtual = null;
 
-const TITULO = 'Introdução ao Notion pra Times de Marketing';
-const DATA = '08/09/2026';
+  for (const linhaBruta of markdown.split('\n')) {
+    const linha = linhaBruta.trim();
+    const tituloMatch = linha.match(/^#\s+(.+)/);
+    const dataMatch = linha.match(/^\*\*Data:\*\*\s*(.+)/);
+    const secaoMatch = linha.match(/^##\s+(.+)/);
+    const bulletMatch = linha.match(/^-\s+(.+)/);
 
-const RESUMO = `Este treinamento apresentou a lógica por trás do Notion pra
-organizar o time de marketing: a diferença entre página e banco de dados, e
-como usar propriedades, relações e views pra que a mesma informação sirva a
-pessoas diferentes de formas diferentes.`;
+    if (tituloMatch) { titulo = tituloMatch[1].trim(); continue; }
+    if (dataMatch) { data = dataMatch[1].trim(); continue; }
+    if (secaoMatch) { secaoAtual = secaoMatch[1].trim(); continue; }
+    if (!secaoAtual || !linha) continue;
 
-const TOPICOS = [
-  'Diferença entre página (documento) e banco de dados (coleção com propriedades)',
-  'Criação do banco de dados "Campanhas": nome, status, responsável, datas',
-  'Relação entre bancos de dados (ex: Campanhas ↔ Peças de Conteúdo)',
-  'Views: a mesma base pode virar calendário, kanban ou lista, dependendo de quem olha',
-];
+    if (bulletMatch) {
+      secoes[secaoAtual] = secoes[secaoAtual] || [];
+      secoes[secaoAtual].push(bulletMatch[1].trim());
+    } else if (secaoAtual === 'Resumo Executivo') {
+      secoes[secaoAtual].push(linha);
+    }
+  }
 
-const ACOES = [
-  'Cadastrar pelo menos 2 campanhas reais do time no banco "Campanhas" até sexta-feira',
-  'Não se preocupar em fazer perfeito — o objetivo é perder o medo da ferramenta',
-];
+  return {
+    titulo,
+    data,
+    resumo: secoes['Resumo Executivo'].join(' '),
+    topicos: secoes['Principais Tópicos'],
+    acoes: secoes['Pontos de Ação'],
+    perguntas: secoes['Perguntas em Aberto'],
+  };
+}
 
-const PERGUNTAS = [
-  'Dá pra puxar automaticamente os dados de performance do Instagram pro Notion? (Sim, via automação — fica pra um próximo treinamento)',
-];
+const conteudoMd = fs.readFileSync(path.join(__dirname, 'conteudo.md'), 'utf8');
+const { titulo, data, resumo, topicos, acoes, perguntas } = parseConteudo(conteudoMd);
+
+// Troque este arquivo pelo seu próprio logo pra personalizar o material.
+const logo = toBase64(path.join(__dirname, 'logo.svg'));
 
 // ===== DESIGN — fixo, não alterar =====
 
@@ -152,32 +171,32 @@ const html = `<!DOCTYPE html>
 
   <div class="header">
     <img class="logo" src="${logo}" alt="Método Naghol" />
-    <div class="data">${DATA}</div>
+    <div class="data">${data}</div>
   </div>
 
   <div class="titulo">
-    <h1>${TITULO}</h1>
+    <h1>${titulo}</h1>
   </div>
 
   <div class="section">
     <h2>Resumo Executivo</h2>
-    <div class="resumo">${RESUMO}</div>
+    <div class="resumo">${resumo}</div>
   </div>
 
   <div class="section">
     <h2>Principais Tópicos</h2>
-    <ul>${listItems(TOPICOS)}</ul>
+    <ul>${listItems(topicos)}</ul>
   </div>
 
   <div class="section">
     <h2>Pontos de Ação</h2>
-    <ul class="acoes">${listItems(ACOES)}</ul>
+    <ul class="acoes">${listItems(acoes)}</ul>
   </div>
 
-  ${PERGUNTAS.length > 0 ? `
+  ${perguntas.length > 0 ? `
   <div class="section">
     <h2>Perguntas em Aberto</h2>
-    <ul class="perguntas">${listItems(PERGUNTAS)}</ul>
+    <ul class="perguntas">${listItems(perguntas)}</ul>
   </div>` : ''}
 
   <div class="footer">

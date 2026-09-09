@@ -42,17 +42,17 @@ ficou claro, listar como pergunta em aberto em vez de arriscar um resumo errado.
 
 ### 3. Gerar o PDF
 
-Rodar `gerar-pdf.js` (nesta mesma pasta) com o conteúdo estruturado no passo
-anterior. O design é fixo — não foi feito pra ser reinventado a cada execução,
-só o conteúdo muda:
+Preencher `conteudo.md` (nesta mesma pasta) com o conteúdo estruturado no
+passo anterior — é um documento simples, com um título, uma data e as 4
+seções de sempre. Depois, rodar:
 
 ```
 node gerar-pdf.js
 ```
 
-O script lê as variáveis de conteúdo no topo do arquivo (título do
-treinamento, data, resumo, tópicos, ações, perguntas) — editar essas
-variáveis antes de rodar, nunca o HTML/CSS abaixo delas.
+O script lê `conteudo.md` e monta o PDF em cima do design fixo — nunca
+editar `gerar-pdf.js` pra isso, só o conteúdo do markdown muda a cada
+treinamento.
 
 ### 4. Entregar
 
@@ -76,6 +76,7 @@ Duas formas de rodar esta skill, do mais simples ao mais automático:
 ```
 material-pos-treinamento/
 ├── SKILL.md                  ← este arquivo
-├── gerar-pdf.js              ← script de geração (design fixo, editar só o conteúdo no topo)
-└── exemplo-transcricao.md    ← transcrição fictícia pra testar a skill sem precisar de uma aula real
+├── conteudo.md                ← o que muda a cada treinamento — preencher este, nunca o script
+├── gerar-pdf.js               ← motor de geração, design fixo, não precisa editar
+└── exemplo-transcricao.md     ← transcrição fictícia pra testar a skill sem precisar de uma aula real
 ```

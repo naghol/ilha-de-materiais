@@ -5,6 +5,10 @@ treinamento (gravado no Zoom, ou de qualquer outra fonte) em um PDF pronto
 pra entregar aos participantes — resumo executivo, principais tópicos,
 pontos de ação e perguntas em aberto.
 
+O que você edita é sempre `conteudo.md` — um documento simples de preencher.
+O resto (`gerar-pdf.js`, `logo.svg`) é o motor por trás, você só mexe se
+quiser personalizar o design.
+
 ## Como usar — Claude Code (terminal)
 
 1. Copie esta pasta inteira (`material-pos-treinamento`) pra
@@ -13,7 +17,7 @@ pontos de ação e perguntas em aberto.
    pra gerar o PDF).
 3. Peça: "Claude, executa a skill material-pos-treinamento" e cole a
    transcrição do seu treinamento (ou use `exemplo-transcricao.md` pra
-   testar antes).
+   testar antes) — o Claude preenche `conteudo.md` sozinho e roda o script.
 
 ## Como usar — app Claude (claude.ai / desktop)
 
@@ -27,19 +31,21 @@ pontos de ação e perguntas em aberto.
 
 ## Personalizando
 
-- Troque `logo.svg` pelo seu próprio logo.
-- Edite a assinatura no rodapé do PDF, dentro de `gerar-pdf.js` (procure
-  por `assinatura`).
-- O design (HTML/CSS) é fixo de propósito — só o conteúdo no topo do
-  script muda a cada execução.
+- **Conteúdo:** edite `conteudo.md` — título, data e as 4 seções de sempre.
+- **Marca:** troque `logo.svg` pelo seu próprio logo, e o texto de
+  assinatura no rodapé do PDF, dentro de `gerar-pdf.js` (procure por
+  `assinatura`).
+- O design (HTML/CSS) é fixo de propósito — nunca precisa mexer nele pra
+  gerar um material novo.
 
 ## Estrutura
 
 ```
 material-pos-treinamento/
 ├── SKILL.md                  ← instruções da skill
-├── gerar-pdf.js              ← gera o PDF (design fixo, editar só o conteúdo no topo)
-├── exemplo-transcricao.md    ← transcrição fictícia pra testar sem precisar de uma aula real
-├── logo.svg                  ← logo usado no PDF (troque pelo seu)
+├── conteudo.md                ← o que muda a cada treinamento — preencha este
+├── gerar-pdf.js               ← motor de geração, não precisa editar
+├── exemplo-transcricao.md     ← transcrição fictícia pra testar sem precisar de uma aula real
+├── logo.svg                   ← logo usado no PDF (troque pelo seu)
 └── package.json
 ```
