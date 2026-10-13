@@ -22,6 +22,12 @@ Gratuito, use e adapte como quiser (licença MIT).
 Cada pasta é independente — copie só a que você precisa, tem seu próprio
 `README.md` com instruções.
 
+## Guias
+
+| Pasta | O que faz |
+|---|---|
+| [`guias/automacao-dm-instagram`](guias/automacao-dm-instagram) | Plano executável no Claude Code pra montar sua automação de DM do Instagram (comentou, recebe o link), local e grátis ou na nuvem |
+
 ---
 
 Luccas Góes — Método Naghol. Naghol é o nome do rito de mergulho da terra da
