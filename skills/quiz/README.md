@@ -24,3 +24,10 @@ com pontuação e feedback de certo/errado a cada resposta.
 O conteúdo do `SKILL.md` é o comportamento inteiro da skill — não depende de
 nenhum script externo. Pra ajustar os templates de pergunta, edite o próprio
 arquivo.
+
+## Guia em PDF
+
+Quer o passo a passo explicado do zero, com as 8 skills do kit Skills Reais
+para Claude? Baixe o guia em PDF em
+[metodonaghol.com.br/gratuitos/skills-reais-claude](https://www.metodonaghol.com.br/gratuitos/skills-reais-claude)
+(liberado pelo seu e-mail).

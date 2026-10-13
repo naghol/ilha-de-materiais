@@ -5,6 +5,15 @@ alimentada aos poucos, conforme sai no canal.
 
 Gratuito, use e adapte como quiser (licença MIT).
 
+**Pra quem é a Ilha:** pra quem já usa IA no terminal ou no app e quer o
+material cru (skills, `.md` executáveis, templates), já estruturado pra jogar
+direto na sua IA.
+
+**Pra quem é o site:** pra quem prefere um guia passo a passo, explicado do
+zero. Os guias em PDF ficam em
+[metodonaghol.com.br/gratuitos](https://www.metodonaghol.com.br/gratuitos),
+liberados pelo seu e-mail.
+
 ## Skills
 
 | Pasta | O que faz |
@@ -27,6 +36,16 @@ Cada pasta é independente — copie só a que você precisa, tem seu próprio
 | Pasta | O que faz |
 |---|---|
 | [`guias/automacao-dm-instagram`](guias/automacao-dm-instagram) | Plano executável no Claude Code pra montar sua automação de DM do Instagram (comentou, recebe o link), local e grátis ou na nuvem |
+
+## Guias no site (PDF, com e-mail)
+
+Estes existem só como guia em PDF. Pra baixar, deixe seu e-mail na página de cada um.
+
+| Guia | O que é |
+|---|---|
+| [Caixa de Entrada Zero](https://www.metodonaghol.com.br/gratuitos/caixa-de-entrada-zero) | O guia pra parar de organizar e-mail e confiar na busca, só com o que o Gmail já te dá de graça |
+| [Site em 5 Minutos com IA](https://www.metodonaghol.com.br/gratuitos/site-5min-lovable) | O comando pronto pra colar no Lovable e colocar seu site no ar, sem saber programar |
+| [Skills Reais para Claude](https://www.metodonaghol.com.br/gratuitos/skills-reais-claude) | O guia de instalação e uso das 8 skills do kit (`infografico`, `flashcards`, `quiz`, `apresenta`, `dashboard`, `raiox`, `ata`, `roteiro-reels`), que estão cruas aqui na Ilha |
 
 ---
 
