@@ -30,7 +30,7 @@ arquivo.
 
 ## Guia em PDF
 
-Quer o passo a passo explicado do zero, com as 8 skills do kit Skills Reais
+Quer o passo a passo explicado do zero, com as 9 skills do kit Skills Reais
 para Claude? Baixe o guia em PDF em
 [metodonaghol.com.br/gratuitos/skills-reais-claude](https://www.metodonaghol.com.br/gratuitos/skills-reais-claude)
 (liberado pelo seu e-mail).

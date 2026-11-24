@@ -27,6 +27,7 @@ liberados pelo seu e-mail.
 | [`skills/raiox`](skills/raiox) | Revisão crítica de contrato/proposta/e-mail antes de enviar |
 | [`skills/ata`](skills/ata) | Transcrição de reunião → plano de ação com responsável e prazo |
 | [`skills/roteiro-reels`](skills/roteiro-reels) | Conteúdo/dado/livro → mini-roteiro de Reels de 60s com gancho estratégico |
+| [`skills/planejamento`](skills/planejamento) | Trabalho grande → plano em arquivo, quebrado em tarefas de uma sessão, pra retomar sem perder o fio (Claude Code) |
 
 Cada pasta é independente — copie só a que você precisa, tem seu próprio
 `README.md` com instruções.
@@ -45,7 +46,7 @@ Estes existem só como guia em PDF. Pra baixar, deixe seu e-mail na página de c
 |---|---|
 | [Caixa de Entrada Zero](https://www.metodonaghol.com.br/gratuitos/caixa-de-entrada-zero) | O guia pra parar de organizar e-mail e confiar na busca, só com o que o Gmail já te dá de graça |
 | [Site em 5 Minutos com IA](https://www.metodonaghol.com.br/gratuitos/site-5min-lovable) | O comando pronto pra colar no Lovable e colocar seu site no ar, sem saber programar |
-| [Skills Reais para Claude](https://www.metodonaghol.com.br/gratuitos/skills-reais-claude) | O guia de instalação e uso das 8 skills do kit (`infografico`, `flashcards`, `quiz`, `apresenta`, `dashboard`, `raiox`, `ata`, `roteiro-reels`), que estão cruas aqui na Ilha |
+| [Skills Reais para Claude](https://www.metodonaghol.com.br/gratuitos/skills-reais-claude) | O guia de instalação e uso das 9 skills do kit (`infografico`, `flashcards`, `quiz`, `apresenta`, `dashboard`, `raiox`, `ata`, `roteiro-reels`, `planejamento`), que estão cruas aqui na Ilha |
 
 ---
 
